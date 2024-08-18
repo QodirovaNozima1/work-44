@@ -1,33 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/header/Header'
+import Hero from './components/hero/Hero'
+import Category from './components/category/Category'
+import Product from './components/product/Product'
+import Footer from './components/footer/Footer'
+import Home from './router/home/Home'
+import Catalog from './router/catalog/Catalog'
+import Contact from './router/contact/Contact'
+import { Routes,Route } from "react-router-dom"
+import Dostafka from './router/dostafka/Dostafka'
+import NotFound from './router/notfound/NotFound'
+import Detail from './router/detail/Detail'
+import Admin from './router/admin/Admin'
+import Manage from './router/admin/Manage'
+import Login from './router/login/Login'
+import Name from './router/admin/Name'
+import Auth from './router/auth/Auth'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Header/>
+    <Routes>
+      <Route path='/'element={<Home/>} />
+      <Route path='/catalog' element={<Catalog/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/dostafka' element={<Dostafka/>}/>
+      <Route path='/product/:id' element={<Detail/>}/>
+      <Route path='/' element={<Auth/>}>
+      <Route path="admin" element={<Admin />}>
+          <Route path="manage" element={<Manage />}></Route>
+          <Route path="name" element={<Name />}></Route>
+        </Route>
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path='*' element={<NotFound/>}/>
+    </Routes>
+    <Footer/>
     </>
   )
 }

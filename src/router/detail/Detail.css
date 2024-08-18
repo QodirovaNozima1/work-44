@@ -1,0 +1,30 @@
+
+.btn{
+    transition: .4s;
+}
+.btn:hover{
+    border: none;
+    border: 1px solid #ff8a1e;
+    background: white;
+    color: #ff8a1e;
+    font-weight: 600;
+}
+@media (max-width: 625px) {
+    .form {
+        display: none;
+      }
+  }
+  @media (max-width: 625px) {
+   .form {
+    display: none;
+  }
+  p {
+    display: none;
+  }
+  }
+  @media (max-width:800px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
