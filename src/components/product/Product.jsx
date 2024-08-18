@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./Product.css";
 import { LiaCartPlusSolid } from "react-icons/lia";
 import { PiSpinnerBold } from "react-icons/pi";
-import axios from '../../api/Index';
+import axios from '../../api';
 import { Link } from 'react-router-dom';
 const API_URL = "https://dummyjson.com"
 const Product = () => {
@@ -37,7 +37,7 @@ const Product = () => {
                 }
             })
             .then(res => {
-                console.log(res.data);
+                console.log(res. data);
                 setTotal(res.data.total);
                 setProducts(res.data.products)
             })

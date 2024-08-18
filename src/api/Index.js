@@ -1,8 +1,5 @@
-import axios from 'axios'
-
-const mainUrl = axios({
-    baseURL: "https://dummyjson.com"
-})
-
-
-export default mainUrl
+import axios from "axios";
+const mainUrl = axios.create({
+  baseURL: "https://dummyjson.com",
+});
+export default mainUrl;
