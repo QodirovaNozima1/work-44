@@ -3,6 +3,9 @@ import image from '../../assets/boy.png'
 import { SlSocialVkontakte } from "react-icons/sl";
 import { FiFacebook } from "react-icons/fi";
 import { IoLogoGoogleplus } from "react-icons/io";
+  
+
+
 
 
 const Connect = () => {

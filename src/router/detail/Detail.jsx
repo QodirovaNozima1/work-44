@@ -1,6 +1,6 @@
 import axios from '../../api/Index'
 import './Detail.css'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 const API_URL = "https://dummyjson.com"
 import { IoStarOutline } from "react-icons/io5";
@@ -73,7 +73,7 @@ const Detail = () => {
       </div>
   ))
     return(
-        <div className="container w-10/12">
+        <div className="container w-10/12 pt-6 pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mb-10 px-1 ">
           <div>
             {" "}
@@ -147,11 +147,11 @@ const Detail = () => {
             <hr />
           </div>
         </div>
-        <div className="border grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center ">
+        <div className=" grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center ">
         </div>
         <ProductCard products={products}/>
     </div>
     )
 }
 
-export default Detail
+export default memo(Detail)

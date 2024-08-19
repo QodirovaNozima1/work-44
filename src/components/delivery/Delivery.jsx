@@ -1,6 +1,9 @@
 import React from 'react'
 import img1 from '../../assets/boy1.png'
 import img2 from '../../assets/boy2.png'
+   
+
+
 
 const Delivery = () => {
     return (

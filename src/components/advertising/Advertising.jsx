@@ -6,6 +6,8 @@ import rasm3 from '../../assets/Rectangle 185.png'
 import rasm4 from '../../assets/Rectangle 186.png'
 import rasm5 from '../../assets/Rectangle 187.png'
 import rasm6 from '../../assets/Rectangle 188.png'
+   
+
 const list = [
     {
       id: 1,

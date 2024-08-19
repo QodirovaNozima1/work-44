@@ -17,13 +17,12 @@ const Header = () => {
       <div className='container w-5/6'>
         <nav className="navbar py-5 flex items-center justify-between">
           <div className="navbar__logo">
-            <img src={navlogo} alt="" />
+          <Link to={"/"}>
+          <img src={navlogo} alt="" />
+              </Link>
           </div>
           <div className={`nav__collect ${isMenuOpen ? "show" : ""}`}>
             <ul className="navbar__collection flex gap-7">
-            <Link className={"text-[#323131] "} to={"/"}>
-                Хоме
-              </Link>
               <Link className={"text-[#323131] "} to={"/catalog"}>
                 Каталог
               </Link>
