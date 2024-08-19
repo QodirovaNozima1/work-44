@@ -16,7 +16,9 @@ const Product = () => {
     const [onset, setOnset] = useState(1)
     const limit = 4
 
-
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
 
     useEffect(()=>{
         axios

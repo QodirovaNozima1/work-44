@@ -1,5 +1,6 @@
 import React from 'react'
 import './Category.css'
+import { useEffect } from 'react'
 import divan from "../../assets/cate1.png"
 import divan1 from "../../assets/cate2.png"
 import divan2 from "../../assets/cate3.png"
@@ -10,6 +11,9 @@ import divan6 from "../../assets/cate7.png"
 import divan7 from "../../assets/cate8.png"
 import divan8 from "../../assets/cate9.png"
 import divan9 from "../../assets/cate10.png"
+ 
+
+
 const box = [
     {
         id: 1,
@@ -63,6 +67,11 @@ const box = [
     },
 ]
 const Category = () => {
+     
+    useEffect(()=>{
+        window.scrollTo(0,0)
+      },[])
+      
     return (
     <div className='category mt-6'>
          <div className='container w-5/7'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import rasm from '../../assets/Rectangle 66.png'
 import rasm1 from '../../assets/Rectangle 68.png'
 import rasm2 from '../../assets/Rectangle 69.png'
@@ -99,6 +100,10 @@ const list = [
     },
   ];
   const Advertising = () => {
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
+    
     return (
       <div className="container w-10/12 mt-6">
         <p className="text-[36px] text font-[700] mt-[-100px] mb-11">Каталог</p>

@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import React from "react";
 import { BsEmojiFrown } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+
 
 
 const Error = () => {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+  
   const navigate = useNavigate();
   return (
     <div className="container mx-auto mt-6">

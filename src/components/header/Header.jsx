@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import "./Header.css"
 import navlogo from "../../assets/click.png"
 import { AiOutlineMenuUnfold } from "react-icons/ai";
@@ -6,6 +6,9 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

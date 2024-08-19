@@ -1,11 +1,15 @@
 import React from 'react'
+import { useEffect } from 'react'
 import img1 from '../../assets/boy1.png'
 import img2 from '../../assets/boy2.png'
    
 
 
-
 const Delivery = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+  
     return (
         <div className="container w-10/12 mt-28">
           <p className="text-[36px] text font-[700] mt-[-100px] mb-11">Доставка</p>

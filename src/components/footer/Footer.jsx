@@ -29,7 +29,7 @@ const Footer = () => {
                         footer2?.map((el, index) => (<li key={index} className="footer__item text-sm"><a href="#">{el}</a></li>))
                     }
                 </ul>
-                <ul className="footer__collection w-full md:w-1/4 flex justify-center md:justify-end items-end text1 display:none;">
+                <ul className="footer__collection w-full justify-start   md:w-1/4 flex justify-start md:justify-end items-end text- display:none;">
                     <FaInstagram className='  text-5xl text-red-500 footer__p' />
                 </ul>
             </div>

@@ -16,7 +16,9 @@ const ProductCard = ({products}) => {
     const limit = 4
 
 
-
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
     const [offset, setOffset] = useState(0)
     const handClick = () => {
         setOffset(offset + 1)
