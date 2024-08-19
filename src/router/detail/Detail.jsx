@@ -149,7 +149,7 @@ const Detail = () => {
         </div>
         <div className="border grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center ">
         </div>
-        <ProductCard products={product}/>
+        <ProductCard products={products}/>
     </div>
     )
 }

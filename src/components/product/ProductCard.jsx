@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { LiaCartPlusSolid } from "react-icons/lia";
@@ -6,8 +6,8 @@ import { PiSpinnerBold } from "react-icons/pi";
 import axios from '../../api/Index';
 import Product from './Product';
 
-const ProductCard = ({product}) => {
-    const [products, setProducts] = useState(null)
+const ProductCard = ({products}) => {
+    const [product, setProducts] = useState(null)
     const [categories, setCategories] = useState(null)
     const [selectCategory, setSelectCategory] = useState("")
     const [loading, setLoading] = useState(false)
@@ -21,7 +21,7 @@ const ProductCard = ({product}) => {
     const handClick = () => {
         setOffset(offset + 1)
     }
-    const productItem = product?.map((product) => (
+    const productItem = products?.map((product) => (
       <div key={product.id} className='w-72 p-3 api flex flex-col gap-4 items-center justify-center rounded-lg  relative overflow-hidden'>
           <Link to = {`/product/${product.id}`}>
           <img src={product.images[0]} alt="" className='w-full h-52 object-contain hover:scale-105 ' />
@@ -44,11 +44,11 @@ const ProductCard = ({product}) => {
 
   return (
     <>
-  <div className='flex gap-3 flex-wrap items-center justify-center'>
+  <div className='flex gap-3 flex-wrap items-center justify-center sm:grid-cols-2 md:grid-cols-3'>
       {productItem}
   </div>
     </>
   )
 }
 
-export default ProductCard
+export default memo (ProductCard)

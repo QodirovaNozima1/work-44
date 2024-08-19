@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,memo } from 'react'
 import "./Product.css";
 import { LiaCartPlusSolid } from "react-icons/lia";
 import { PiSpinnerBold } from "react-icons/pi";
@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 const API_URL = "https://dummyjson.com"
 const Product = () => {
   
-    const [product, setProducts] = useState(null)
+    const [products, setProducts] = useState(null)
     const [categories, setCategories] = useState(null)
     const [selectCategory, setSelectCategory] = useState("")
     const [loading, setLoading] = useState(false)
@@ -52,7 +52,7 @@ const Product = () => {
         setOffset(offset + 1)
     }
 
-    const productItem = product?.map((product) => (
+    const productItem = products?.map((product) => (
         <div key={product.id} className='w-72 p-3 api flex flex-col gap-4 items-center justify-center rounded-lg  relative overflow-hidden'>
             <Link to = {`/product/${product.id}`}>
             <img src={product.images[0]} alt="" className='w-full h-52 object-contain hover:scale-105 ' />
@@ -87,7 +87,7 @@ const Product = () => {
              <option value="" >All</option>
              {categoryItems}
              </select>
-            <ProductCard products={product}/>
+            <ProductCard products={products}/>
             <div className=" text-center">
             {loading && <button className='bg-gray-500 text-2xl w-15  h-11 p-2 text-center border justify-center text-gray-200'><PiSpinnerBold /></button>}
             </div>
@@ -100,4 +100,4 @@ const Product = () => {
     )
 }
 
-export default Product
+export default memo (Product)
