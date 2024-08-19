@@ -1,13 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Navigate } from 'react-router-dom'
 
 const Auth = () => {
-  return (
-    <div>
-        <h2>Auth</h2>
-        <Outlet/>
-    </div>
-  )
+  let user = null 
+  return user ? <Outlet/> : <Navigate replace to= "/login/"/>
 }
 
 export default Auth

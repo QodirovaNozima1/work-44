@@ -7,13 +7,14 @@ import { IoStarOutline } from "react-icons/io5";
 import { IoBarChartOutline } from "react-icons/io5";
 import { TbArrowBigRightLine } from "react-icons/tb";
 import { LiaCartPlusSolid } from "react-icons/lia";
+import ProductCard from '../../components/product/ProductCard'
 
 
 //dynamic
 const Detail = () => {
   const {id} = useParams()
   const [data , setData] = useState (null)
-  const [products, setproduct] = useState(null);
+  const [products, setproducts] = useState(null);
   const [offset, setoffset] = useState(0);
   const [offsett, setoffsett] = useState(0);
 
@@ -33,22 +34,13 @@ const Detail = () => {
              .get(`/products/${id}`)
              .then(res => setData(res.data))
              .catch(res => console.log(res))
-    },[])
+    },[id])
     useEffect(() => {
       axios
-        .get(`/products${sellect}`, {
-          params: {
-            limit: 4,
-          },
-        })
-        .then((res) => {
-          settottal(res.data.total),
-            setproduct(
-              res.data.products.map((product) => ({ ...product, count: 0 }))
-            );
-        })
+        .get(`/products/category/${data?.category}`,{params:{limit:4}})
+        .then(res => setproducts(res.data.products))
         .catch((err) => console.log(err));
-    }, [offsetsy, sellect]);
+    }, [offsetsy, sellect,data]);
 
     
     const productItem = products?.map((product) => (
@@ -157,6 +149,7 @@ const Detail = () => {
         </div>
         <div className="border grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center ">
         </div>
+        <ProductCard products={product}/>
     </div>
     )
 }
